@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{margin: 0; padding: 0; background:black;}
+		#good{font-size:2em; font-weight:border; position: absolute; left: 
+              40%; right: 0px; top: 25%; bottom: 0px; margin: auto; width:
+              auto; height: auto; opacity: 0; z-index: 1; color: white;}
+
+		.cir{width: 50px; height: 50px; position:absolute; border-radius: 50px; background: black;}
+		.title{height: 30px;background:gray;position: relative;}
+		#text{color:white; height: 25px;position: absolute; left: 0px;right: 0px;top:0px;bottom: 0px; margin: auto;}
+		
+		#shot{width: 40px; height: 40px; position: absolute;}
+		#shot:hover{width: 50px; height: 50px; position: absolute;opacity: 0.5;}
+		#police{ position: absolute; left: 0%; right: 0px; top: 0px; bottom: 0px; margin: auto; width:auto; height: auto; opacity: 0; z-index: 2}
+
+	</style>
+</head>
+<body>
+	<section class="title">
+		<p id="text">
+			도둑 잡기
+		</p>
+	</section>
+	    <div id="good">GOOOOOOD!!</div>
+		<div id="circle" class="cir"></div>
+		<img src="theif.jpg" id="shot" >
+		<img src="police.jpg" id="police">
+		
+		</div>
+		<script>
+			for(var i=0; i<30; i++){
+				var a = circle.cloneNode(true);
+				a.id = i;
+		        a.style.left = Math.random()*1500 + "px";
+                a.style.top = Math.random()*600 + "px";
+		        a.style.height = Math.random()*200 +"px";
+		        a.style.width = Math.random()*200 + "px";
+		        a.style.background = rgbmake();
+				document.body.appendChild(a);
+			}
+			var str1 = Math.round(Math.random()*1000);
+            var str2 = Math.round(Math.random()*1000);
+			document.getElementById("shot").style.top = str1+'px';
+            document.getElementById("shot").style.left = str2+'px';
+
+            
+
+	//rgb(32,45,64)
+	function rgbmake(){
+	var a = Math.random()*255;
+	var b = Math.random()*255;
+	var c = Math.random()*255;
+	var d ="rgb(" +a+","+b+","+c+")";
+	return d;
+}
+
+    var handle = setInterval(aa,2000);
+     shot.onclick = function(){
+			clearInterval(handle);
+			alert('도둑을 잡았다!');
+			police.style.opacity="100";
+			good.style.opacity="100"
+			}
+
+    function aa(){
+    	location.reload();
+    }
+		</script>
+</body>
+</html>
